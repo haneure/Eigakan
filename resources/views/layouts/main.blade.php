@@ -7,6 +7,8 @@
     <title>Eigakan</title>
 
     <link rel="stylesheet" href="/css/app.css">
+    @livewireStyles
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800">
@@ -24,19 +26,14 @@
                     <a href="/" class="hover:text-gray-300">Movies</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-300">TV Shows</a>
+                    <a href="/tv" class="hover:text-gray-300">TV Shows</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-300">Actors</a>
+                    <a href="{{ url('actors') }}" class="hover:text-gray-300">Actors</a>
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-                <div class="relative mt-3 md:mt-0">
-                    <input type="text" class="bg-gray-800 rounded-full w-64 px-4 py-1 pl-8 focus:outline-none focus:shadow-outline" placeholder=Search>
-                </div>
-                <div class="absolute top-0">
-                    <img class="fill-current text-gray-500 w-4 mt-8 ml-2" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-search-ui-dreamstale-lineal-dreamstale.png"/>
-                </div>
+                <livewire:search-dropdown>
                 <div class="md:ml-4 mt-3 md:mt-0">
                     <a href="#">
                         <img src="/img/chris.jpg" alt="avatar" class="rounded-full w-8 h-8">
@@ -46,5 +43,7 @@
         </div>
     </nav>
     @yield('container')
+    @livewireScripts
+    @yield('scripts')
 </body>
 </html>
