@@ -54,7 +54,7 @@ class ActorViewModel extends ViewModel
                 ? 'https://image.tmdb.org/t/p/w185/' . $movie['poster_path']
                 : 'https://via.placeholder.com/185x278',
                 'title' => $title,
-                'linkToPage' => $movie['media_type'] === 'movie' ? url('movies'.$movie['id']) : url('tv'.$movie['id'])
+                'linkToPage' => $movie['media_type'] === 'movie' ? url('movies'.'/'.$movie['id']): url('tv'.'/'.$movie['id'])
             ]);
         });
     }
